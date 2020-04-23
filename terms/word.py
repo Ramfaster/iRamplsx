@@ -62,7 +62,7 @@ def list():
         "page":page,
         "pagination":pagination,
         "total":totalRowCount,
-        "records":str(words),
+        "records":words,
         "words":row_array
     }
     
