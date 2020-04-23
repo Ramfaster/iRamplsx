@@ -46,7 +46,7 @@ def list():
 
     print("#2-1 totalRowCount>>> : ", totalRowCount)
     total_rows = totalRowCount
-    pagination = Pagination(page=page, total=totalRowCount, search=search, record_name='words')
+    pagination = Pagination(page=page, total=totalRowCount, search=searchKey, record_name='words')
     
     for index in range(0,words):
         dic_data ={}
