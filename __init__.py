@@ -1,23 +1,19 @@
-"""
-The flask application package.
-"""
-
 from flask import Blueprint, Flask
-from index import main_blueprint
-from terms import terms_blueprint
+from main.index import main_bp
+from terms.word import terms_bp
 
 app = Flask(__name__)
+app.secret_key = 'hyunkai'
 
-if __name__ == "__main__":
-   app.run(debug=True)
+# main look like 
+app.register_blueprint(main_bp, url_prefix='/')
+# terms look like
+app.register_blueprint(terms_bp, url_prefix='/terms')
 
+print("#### __init__start ####")
 
-# 파일 이름이 index.py이므로
-app.register_blueprint(main_blueprint)
-
-app.register_blueprint(terms_blueprint)
-
-@app.errorhandler(404)
-def page_not_found(error):
-    return "<h1>404 Error</h1>", 404
-
+#if __name__ == "__main__":
+    #app.secret_key = 'hyunkai'
+    #app.config['SESSION_TYPE'] = 'memcached'
+    #app.run(debug=True)
+#    app.debug = True

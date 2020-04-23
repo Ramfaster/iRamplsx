@@ -1,0 +1,15 @@
+{{#each sprites}}.selected .{{name}}{{#if @last}}{{^}},{{/if}}{{/each}}{
+ 	display:inline-block;
+	vertical-align:middle;
+{{#spritesheet}}
+ 	background-image:url({{{escaped_image}}}) !important;
+{{/spritesheet}}
+ 	background-repeat: no-repeat;
+}
+{{#sprites}}
+.selected .{{name}}{
+	background-position:{{px.offset_x}} {{px.offset_y}} !important;
+	width:{{px.width}} !important;
+	height:{{px.height}} !important;
+}
+{{/sprites}}

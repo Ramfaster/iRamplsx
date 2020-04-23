@@ -23,6 +23,11 @@ class Database():
         row = self.cursor.fetchall()
         return row
 
+    def executeRowCount(self, query, args={}):
+        self.cursor.execute(query, args)
+        cnt = self.cursor.rowcount
+        return cnt
+
     def commit(self):
         self.db.commit()
 

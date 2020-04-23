@@ -1,0 +1,86 @@
+.btn_file01,.btn_news,.btn_next,.btn_play,.btn_prev,.btn_slide_close,.btn_slide_open,.btn_stop,.btn_type01,.btn_type02,.btn_type03,.btn_type04,.btn_type05,.btn_type06,.btn_type07,.btn_type08{
+ 	display:inline-block;
+	vertical-align:middle;
+ 	background-image:url(../../../img/sprite/dist/button.png);
+ 	background-repeat: no-repeat;
+}
+.btn_file01{
+	background-position:-161px -93px;
+	width:90px;
+	height:28px;
+}
+.btn_news{
+	background-position:0px -39px;
+	width:59px;
+	height:60px;
+}
+.btn_next{
+	background-position:-108px -155px;
+	width:35px;
+	height:35px;
+}
+.btn_play{
+	background-position:-72px -155px;
+	width:35px;
+	height:35px;
+}
+.btn_prev{
+	background-position:-36px -155px;
+	width:35px;
+	height:35px;
+}
+.btn_slide_close{
+	background-position:-26px -191px;
+	width:25px;
+	height:40px;
+}
+.btn_slide_open{
+	background-position:0px -191px;
+	width:25px;
+	height:40px;
+}
+.btn_stop{
+	background-position:0px -155px;
+	width:35px;
+	height:35px;
+}
+.btn_type01{
+	background-position:-161px -62px;
+	width:90px;
+	height:30px;
+}
+.btn_type02{
+	background-position:-161px -31px;
+	width:90px;
+	height:30px;
+}
+.btn_type03{
+	background-position:-161px 0px;
+	width:90px;
+	height:30px;
+}
+.btn_type04{
+	background-position:0px -129px;
+	width:120px;
+	height:25px;
+}
+.btn_type05{
+	background-position:-161px -122px;
+	width:50px;
+	height:25px;
+}
+.btn_type06{
+	background-position:0px -100px;
+	width:120px;
+	height:28px;
+}
+.btn_type07{
+	background-position:0px 0px;
+	width:160px;
+	height:38px;
+}
+.btn_type08{
+	background-position:-60px -39px;
+	width:100px;
+	height:30px;
+}

@@ -1,0 +1,71 @@
+var dataArray = [
+  {
+	"NO": "1",
+	"한글명": "모니터링",
+	"영문약어": "MNTR",
+	"영문의미": "MONITORING",
+	"단어유형": "표준단어",
+	"설명": "방송국이나 신문사의 의뢰를 받아 프로그램이나 기사에 대한 의견을 제출하는 사람.  생산 업체의 의뢰를 받아 상품을 써 보고 그 결과를 보고하는 사람.",
+	"동의어": ""	
+  },
+  {
+	"NO": "2",
+	"한글명": "발전량",
+	"영문약어": "GENEQTY",
+	"영문의미": "generation quantity",
+	"단어유형": "표준용어",
+	"설명": "발전한 전기의 전체 ",
+	"동의어": "전력량,출력량"	
+  }
+];
+
+function makeTable(id, array){
+     jQuery("#"+id).jqGrid({
+            datatype: "local",
+            height: 570, 
+            autowidth:true,
+            //width : 630,
+            scroll:true,
+            colNames:['NO','한글명', '영문약어', '영문의미','단어유형','설명','동의어'],
+            colModel:[
+                {name:'no', align:'right'},
+                {name:'korea', align:'right'},
+                {name:'english', align:'right'},
+                {name:'means', align:'right'},
+                {name:'type', align:'right'},
+                {name:'desc', align:'right'},   
+                {name:'synonym', align:'right'}    
+            ],
+            caption: "용어정의"
+      });
+
+      for(var I in array){
+           $("#"+id).jqGrid('addRowData',i+1,array[i]);
+      }
+}
+
+
+//$(document).ready(function() {
+//  $("#gridList").jqGrid({
+//	datatype: 'local',
+//    width : 630,
+//	styleUI: 'Foundation',
+//	data: dataArray,
+//	colModel: [
+//	  {name: 'no', label : 'NO'},
+//	  {name: 'korea', label : '한글명'},
+//	  {name: 'english', label : '영문약어'},
+//	  {name: 'means', label : '영문의미'},
+//	  {name: 'type', label : '단어유형'},
+//	  {name: 'desc', label : '설명'},
+//	  {name: 'synonym', label : '동의어'}
+//	],
+//	caption : '용어정의',
+//	height: 'auto',
+//	rowNum: 5,
+//	pager: '#pager'
+//  });
+//});
+ 
+
+makeTable('gridList', dataArray);

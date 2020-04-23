@@ -1,0 +1,104 @@
+{% extends 'layout.html' %}
+
+{% block title %}표준용어 관리{% endblock %}
+
+{% block body %}
+
+<div class="lnb">
+	<span> 기준정보서비스</span>
+	<i class="icon_gt"></i>
+	<span> Dictionary Of Terms</span>
+	<i class="icon_gt"></i>
+	<strong>표준용어  관리</strong>
+</div>
+<div class="full_cont">			
+	<div class="form_wrap">
+		<div class="form_tit_wrap">
+			<h4 class="frm_tit">신규 등록</h4>
+		</div>
+		<div class="form_cont_wide">
+			<div class="frm_con01">
+				<h3 class="tit_type07"><i>&#8226;</i>표준 용어 정보<span class="tit_info"><i>&#42;</i>표시된 항목은 필수 입력 사항입니다.</span></h3>
+				<div class="frm_cont_wrap">
+					<table class="tbl_frm">
+						<colgroup>
+							<col style="width:180px;" />
+							<col style="width:auto;" />
+						</colgroup>
+						<tr>
+							<th><span><i>&#42;</i>사용 여부</span></th>
+							<td>
+								<input type="radio" id="radio1" class="image_type" name="radio1" checked="checked" /><label for="radio1">사용</label>
+							   <input type="radio" id="radio2" class="image_type" name="radio2" /><label for="radio2">미사용</label>
+							</td>
+						</tr>
+					</table>
+					<table class="tbl_frm">
+						<colgroup>
+							<col style="width:180px;" />
+							<col style="width:auto;" />
+						</colgroup>
+						<tr>
+							<th><span><i>&#42;</i>한글 명</span></th>
+							<td>
+								<input type="text" class="frm_type" value=""/>
+							</td>
+						</tr>
+						<tr>
+							<th><span><i>&#42;</i>영문 약어</span></th>
+							<td>
+								<input type="text" class="frm_type"/>
+							</td>
+						</tr>
+						<tr>
+							<th><span><i>&#42;</i>단어 유형</span></th>
+							<td>
+								<input type="radio" id="wrd01" class="image_type" name="wrd02" checked="checked" /><label for="radio1">표준단어</label>
+							   <input type="radio" id="wrd01" class="image_type" name="wrd01" /><label for="radio2">표준용어</label>
+							</td>
+						</tr>
+						<tr>
+							<th><span><i>&#42;</i>영문 의미</span></th>
+							<td>
+								<textarea name="mean" id="mean" cols="30" rows="3"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<th><span><i>&#42;</i>도메인 아이디</span></th>
+							<td>
+								<input type="text" class="frm_type"/>
+							</td>
+						</tr>
+						<tr>
+							<th><span>동의어</span></th>
+							<td>
+								<textarea name="synonym" id="synonym" cols="30" rows="3"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<th><span>설명</span></th>
+							<td>
+								<textarea name="desc" id="desc" cols="30" rows="5"></textarea>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="btn_wrap">
+		<span class="f_left"><a href="{{ url_for('terms_bp.list') }}" class="btn_type03">목록</a></span>
+		<span class="f_left">
+			<a href="javascript:;" id="btn_reset" class="btn_type03">취소</a>
+		</span>
+		<div class="btn_sec_wrap">
+			<input type="submit" value="등록" class="btn_type01" />
+		</div>
+	</div>	
+</div>
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/src/terms/termsExpress.js')}}"></script>
+
+{% endblock %}
+
+

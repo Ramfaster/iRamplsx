@@ -1,0 +1,196 @@
+.selected .icon_add02,.selected .icon_addon,.selected .icon_arrow,.selected .icon_arrow02,.selected .icon_calendar,.selected .icon_check,.selected .icon_check03,.selected .icon_down02,.selected .icon_gnb01,.selected .icon_gnb02,.selected .icon_gnb03,.selected .icon_gnb04,.selected .icon_gnb05,.selected .icon_gnb06,.selected .icon_gnb07,.selected .icon_gnb08,.selected .icon_gnb09,.selected .icon_gnb10,.selected .icon_gnb11,.selected .icon_gnb12,.selected .icon_gnb13,.selected .icon_gnb14,.selected .icon_gnb15,.selected .icon_gnb16,.selected .icon_gnb17,.selected .icon_gnb18,.selected .icon_green,.selected .icon_menu,.selected .icon_orange,.selected .icon_red,.selected .icon_removeon,.selected .icon_ss01,.selected .icon_ss02,.selected .icon_ss03,.selected .icon_tree01,.selected .icon_tree02,.selected .icon_up02,.selected .icon_yellow{
+ 	display:inline-block;
+	vertical-align:middle;
+ 	background-image:url(../../../img/sprite/dist/icon_selected.png) !important;
+ 	background-repeat: no-repeat;
+}
+.selected .icon_add02{
+	background-position:-112px -15px !important;
+	width:13px !important;
+	height:13px !important;
+}
+.selected .icon_addon{
+	background-position:-112px -62px !important;
+	width:12px !important;
+	height:12px !important;
+}
+.selected .icon_arrow{
+	background-position:-112px -95px !important;
+	width:5px !important;
+	height:6px !important;
+}
+.selected .icon_arrow02{
+	background-position:-112px -75px !important;
+	width:9px !important;
+	height:10px !important;
+}
+.selected .icon_calendar{
+	background-position:-42px -30px !important;
+	width:20px !important;
+	height:20px !important;
+}
+.selected .icon_check{
+	background-position:-112px -86px !important;
+	width:10px !important;
+	height:8px !important;
+}
+.selected .icon_check03{
+	background-position:-88px -92px !important;
+	width:14px !important;
+	height:14px !important;
+}
+.selected .icon_down02{
+	background-position:-118px -95px !important;
+	width:6px !important;
+	height:3px !important;
+}
+.selected .icon_gnb01{
+	background-position:-21px -30px !important;
+	width:20px !important;
+	height:20px !important;
+}
+.selected .icon_gnb02{
+	background-position:-63px -72px !important;
+	width:20px !important;
+	height:18px !important;
+}
+.selected .icon_gnb03{
+	background-position:-21px -92px !important;
+	width:20px !important;
+	height:17px !important;
+}
+.selected .icon_gnb04{
+	background-position:-71px -21px !important;
+	width:20px !important;
+	height:20px !important;
+}
+.selected .icon_gnb05{
+	background-position:-63px -51px !important;
+	width:20px !important;
+	height:19px !important;
+}
+.selected .icon_gnb06{
+	background-position:0px -92px !important;
+	width:20px !important;
+	height:18px !important;
+}
+.selected .icon_gnb07{
+	background-position:-21px -51px !important;
+	width:20px !important;
+	height:20px !important;
+}
+.selected .icon_gnb08{
+	background-position:0px -72px !important;
+	width:20px !important;
+	height:19px !important;
+}
+.selected .icon_gnb09{
+	background-position:-21px -72px !important;
+	width:20px !important;
+	height:19px !important;
+}
+.selected .icon_gnb10{
+	background-position:-92px -21px !important;
+	width:19px !important;
+	height:18px !important;
+}
+.selected .icon_gnb11{
+	background-position:-42px -72px !important;
+	width:20px !important;
+	height:19px !important;
+}
+.selected .icon_gnb12{
+	background-position:-92px 0px !important;
+	width:19px !important;
+	height:20px !important;
+}
+.selected .icon_gnb13{
+	background-position:0px -51px !important;
+	width:20px !important;
+	height:20px !important;
+}
+.selected .icon_gnb14{
+	background-position:-71px 0px !important;
+	width:20px !important;
+	height:20px !important;
+}
+.selected .icon_gnb15{
+	background-position:-29px 0px !important;
+	width:20px !important;
+	height:20px !important;
+}
+.selected .icon_gnb16{
+	background-position:-50px 0px !important;
+	width:20px !important;
+	height:20px !important;
+}
+.selected .icon_gnb17{
+	background-position:-42px -51px !important;
+	width:20px !important;
+	height:20px !important;
+}
+.selected .icon_gnb18{
+	background-position:0px -30px !important;
+	width:20px !important;
+	height:20px !important;
+}
+.selected .icon_green{
+	background-position:-92px -56px !important;
+	width:15px !important;
+	height:15px !important;
+}
+.selected .icon_menu{
+	background-position:0px 0px !important;
+	width:28px !important;
+	height:29px !important;
+}
+.selected .icon_orange{
+	background-position:-112px 0px !important;
+	width:14px !important;
+	height:14px !important;
+}
+.selected .icon_red{
+	background-position:-42px -92px !important;
+	width:15px !important;
+	height:15px !important;
+}
+.selected .icon_removeon{
+	background-position:-112px -102px !important;
+	width:12px !important;
+	height:2px !important;
+}
+.selected .icon_ss01{
+	background-position:-58px -92px !important;
+	width:14px !important;
+	height:15px !important;
+}
+.selected .icon_ss02{
+	background-position:-73px -92px !important;
+	width:14px !important;
+	height:15px !important;
+}
+.selected .icon_ss03{
+	background-position:-92px -40px !important;
+	width:19px !important;
+	height:15px !important;
+}
+.selected .icon_tree01{
+	background-position:-112px -29px !important;
+	width:11px !important;
+	height:15px !important;
+}
+.selected .icon_tree02{
+	background-position:-112px -45px !important;
+	width:10px !important;
+	height:16px !important;
+}
+.selected .icon_up02{
+	background-position:-112px -105px !important;
+	width:6px !important;
+	height:3px !important;
+}
+.selected .icon_yellow{
+	background-position:-92px -72px !important;
+	width:15px !important;
+	height:15px !important;
+}

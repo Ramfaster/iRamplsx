@@ -1,114 +1,162 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Ramfaster</title>
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+<html lang="ko">
+<head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/common/reset.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/common/common.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/common/common_derms.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/lib/select2/select2.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/lib/customize.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/sprite/dist/sprite.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/common/fonts.css')}}">
 
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" href="assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-    <link rel="icon" href="assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-    <link rel="manifest" href="{{ url_for('static', filename='assets/img/favicons/manifest.json') }}">
-    <link rel="mask-icon" href="{{ url_for('static', filename='assets/img/favicons/safari-pinned-tab.svg') }}" color="#563d7c">
-    <link rel="icon" href="{{ url_for('static', filename='assets/img/favicons/favicon.ico') }}">
-    <meta name="msapplication-config" content="assets/img/favicons/browserconfig.xml">
-    <meta name="theme-color" content="#563d7c">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/lib/magnific-popup/magnific-popup.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/lib/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/lib/perfect-scrollbar/perfect-scrollbar.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/lib/smalot-bootstrap-datetimepicker/bootstrap-datetimepicker.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/lib/customizeForm/customize.form.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/lib/zTree/zTree.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/lib/jquery-ui/jquery-ui.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/ui.jqgrid.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/common/common_derms.css')}}">
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/lib/customize.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/sprite/dist/sprite.css')}}">
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
-  </head>
-  <body>
-    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{{ url_for('main.home') }}">Ramfaster</a>
-      <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-          <a class="nav-link" href="{{ url_for('main.logout') }}">{{ username }} Sign out</a>
-        </li>
-      </ul>
-    </nav>
+<!-- Favicons -->
+<link rel="apple-touch-icon" href="/static/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/static/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/static/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="{{ url_for('static', filename='assets/img/favicons/manifest.json') }}">
+<link rel="mask-icon" href="{{ url_for('static', filename='assets/img/favicons/safari-pinned-tab.svg') }}" color="#563d7c">
+<link rel="icon" href="{{ url_for('static', filename='assets/img/favicons/favicon.ico') }}">
+<meta name="msapplication-config" content="/static/assets/img/favicons/browserconfig.xml">
 
-    <div class="container-fluid">
-      <div class="row">
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-          <div class="sidebar-sticky">
-            <ul class="nav flex-column">
-              <li class="nav-item">
-                <a class="nav-link active" href="#">
-                  <span data-feather="home"></span>
-                  Dashboard <span class="sr-only">(current)</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file"></span>
-                  Orders
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="shopping-cart"></span>
-                  Products
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="users"></span>
-                  Customers
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="bar-chart-2"></span>
-                  Reports
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="layers"></span>
-                  Integrations
-                </a>
-              </li>
-            </ul>
+<script type="text/javascript" src="{{ url_for('static', filename='js/lib/jquery/jquery.min.js')}}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/lib/jquery-ui/jquery-ui.min.js')}}"></script> 
+<script type="text/javascript" src="{{ url_for('static', filename='js/lib/underscore/underscore-min.js')}}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/lib/magnific-popup/jquery.magnific-popup.min.js')}}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/lib/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js')}}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/lib/perfect-scrollbar/perfect-scrollbar.jquery.min.js')}}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/lib/smalot-bootstrap-datetimepicker/bootstrap-datetimepicker.js')}}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/lib/customizeForm/jquery.customize.form.min.js')}}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/lib/jquery-ellipsis/jquery.ellipsis.min.js')}}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/lib/zTree/jquery.ztree.core.min.js')}}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/lib/zTree/jquery.ztree.excheck.min.js')}}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/lib/highcharts/highcharts.js')}}"></script>         
+<script type="text/javascript" src="{{ url_for('static', filename='js/lib/jquery_vticker/jquery.vticker.js')}}"></script> 
+<script type="text/javascript" src="{{ url_for('static', filename='jqgrid/js/i18n/grid.locale-kr.js')}}"></script>        
+<script type="text/javascript" src="{{ url_for('static', filename='jqgrid/js/minified/jquery.jqGrid.min.js')}}"></script>       
+<script type="text/javascript" src="{{ url_for('static', filename='js/common/jquery.customize.dialog.js')}}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/common/layout.js')}}"></script>                     
+<script type="text/javascript" src="{{ url_for('static', filename='js/common/util.js')}}"></script>                       
+<script type="text/javascript" src="{{ url_for('static', filename='js/common/common.js')}}"></script>                     
 
-            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-              <span>Dic of Terms</span>
-              <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
-                <span data-feather="plus-circle"></span>
-              </a>
-            </h6>
-            <ul class="nav flex-column mb-2">
-              <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('terms.list') }}">
-                  <span data-feather="file-text"></span>
-                  표준용어
-                </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
+<script type=text/javascript>
+  $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>
+</head>
 
-{% block body %}{% endblock %}
+<body>
+<div id="wrap">
+        <div id="header">
+                <div class="header_cont">
+                        <a href="javascript:;" class="btn_gnb"><i class="icon_menu">Menu</i></a>
+                        <div class="gnb">
+                                <div class="menu">
+                                        <div class="login_txt">반갑습니다 <strong>{{ username }}</strong> 님.</div>
+                                        <ul class="depth01">
+                                                <li><a href="javascript:;" class="link"><i class="icon_gnb01"></i><span>DASH BOARD</span><i class="icon_arrow02"></i></a>
+                                                        <div class="depth_wrap">
+                                                                <ul class="depth02">
+                                                                        <li><a href="javascript:;">Global Dashboard</a></li>
+                                                                        <li><a href="javascript:;">Nation Dashboard</a></li>
+                                                                        <li><a href="javascript:;">Setcor Dashboard</a></li>
+                                                                </ul>
+                                                        </div>
+                                                </li>
+                                                <li class="selected"><a href="javascript:;" class="link"><i class="icon_gnb02"></i><span>DICTIONARY</span><i class="icon_arrow02"></i></a>
+                                                        <div class="depth_wrap">
+                                                                <ul class="depth02">
+                                                                        <li class="on"><a href="javascript:;">Dic of Terms</a></li>
+                                                                        <li><a href="javascript:;">Temp Menu#1</a></li>
+                                                                        <li><a href="javascript:;">Temp Menu#2</a></li>
+                                                                        <li><a href="javascript:;">Temp Menu#3</a></li>
+                                                                        <li><a href="javascript:;">Temp Menu#4</a></li>
+                                                                </ul>
+                                                        </div>
+                                                </li>
+                                                <li><a href="javascript:;" class="link"><i class="icon_gnb03"></i><span>REAL TIME<br />MONITORING</span><i class="icon_arrow02"></i></a></li>
+                                                <li><a href="javascript:;" class="link"><i class="icon_gnb04"></i><span>OPERATION</span><i class="icon_arrow02"></i></a></li>
+                                                <li><a href="javascript:;" class="link"><i class="icon_gnb05"></i><span>SERVICE<br />MANAGEMENT</span><i class="icon_arrow02"></i></a></li>
+                                                <li><a href="javascript:;" class="link"><i class="icon_gnb06"></i><span>ASSET<br />MANAGEMENT</span><i class="icon_arrow02"></i></a></li>
+                                                <li><a href="javascript:;" class="link"><i class="icon_gnb07"></i><span>REPORTING</span><i class="icon_arrow02"></i></a></li>
+                                                <li><a href="javascript:;" class="link"><i class="icon_gnb08"></i><span>ANALYSIS</span><i class="icon_arrow02"></i></a></li>
+                                                <li><a href="javascript:;" class="link"><i class="icon_gnb11"></i><span>SYSTEM<br />MANAGEMENT</span><i class="icon_arrow02"></i></a></li>
+                                                <li><a href="javascript:;" class="link"><i class="icon_gnb12"></i><span>SYSETM NOTICE</span><i class="icon_arrow02"></i></a></li>
+                                        </ul>
+                                        <div class="logout link"><a href="{{ url_for('index.logout') }}"><i class="icon_logout"></i>로그아웃</a></div>
+                                </div>
+                                <div class="dimmed"></div>
+                        </div>
+                        <h1><i class="ico_dvc pvess">PV + ESS</i>Visualization Express</h1>
+                        <div class="util_area">
+                                <div class="alarm_fire off"><!-- 화재여부 있을때 css - on // 없을때 off -->
+                                        <span class="fire_on">화재발생</span>
+                                </div>
+                                <div class="alarm_dvc broken">
+                                <!--    <span class="dvc_normal">설비정상</span>
+                                        <span class="dvc_warnng">설비경고</span>
+                                        <span class="dvc_broken">설비고장</span>
+                                        <span class="dvc_neterr">통신장애</span>
+                                -->
+                                </div>
+                                <div class="notification">
+                                <!--    <a href="javascript:;">
+                                                <i class="icon_alarm">알림</i>
+                                                <span class="mark">99<sup>+</sup></span>
+                                        </a>
+                                -->
+                                </div>
+                                <div class="weather">
+                                        <i class="icon_01d">해</i>
+                                        <span class="temperature">맑음 / 27℃</span><br />
+                                        <span class="date">2016. 04. 21 Thu <strong>17:29</strong></span>
+                                </div>
+                                <div class="lang_list">
+                                        <a href="javascript:;"><strong>Korean</strong><i class="icon_down03"></i></a>
+                                        <ul class="list">
+                                                <li class="selected"><a href="javascript:;"><i class="icon_arrow"></i>Korean</a></li>
+                                                <li><a href="javascript:;"><i class="icon_arrow"></i>English</a></li>
+                                        </ul>
+                                </div>
+                                <div class="eps_list">
+                                        <a href="javascript:;">사이트 목록<i class="icon_epslist"></i></a>
+                                        <ul class="list">
+                                                <li class="selected"><a href="javascript:;"><i class="icon_arrow"></i>서남 아리수 D 태
+양광 발전 시스템</a></li>
+                                                <li><a href="javascript:;"><i class="icon_arrow"></i>강원 태양광 A 발전 시스템</a></li>
+                                                <li><a href="javascript:;"><i class="icon_arrow"></i>종로 버스정류장 태양광 사이트</a></li>
+                                                <li><a href="javascript:;"><i class="icon_arrow"></i>일본 시마노현 대지 사이트</a></li>
+                                                <li><a href="javascript:;"><i class="icon_arrow"></i>울릉도 자립섬 태양광 사이트</a></li>
+                                        </ul>
+                                </div>
+                        </div>
+                </div>
+        </div>
+        <div id="container">
+            {% block body %}{% endblock %}
+        </div>
 
-      </div>
-    </div>
-  </body>
+        <div id="footer">
+                <div class="footer_cont">
+                        <h2><img src="{{ url_for('static', filename='img/common/h2_hanwha_energy.png') }}" alt="Ramfaster View" /><span><img src="{{ url_for('static', filename='img/common/h2_heis_onm.png') }}" alt="Ramfaster O&M" /></span></h2>
+                        <div class="copyright">
+                                <span>&#169; 2020<img src="{{ url_for('static', filename='img/common/copyright.png') }}" alt="Ramfaster" />all rights reserved.</span>
+                                <span>Contact mail : 1001ship@gmail.com</span>
+                        </div>
+                </div>
+        </div>
+</div>
+
+</body>
 </html>

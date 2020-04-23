@@ -1,0 +1,46 @@
+.btn_file01:hover,.btn_type01:hover,.btn_type02:hover,.btn_type03:hover,.btn_type04:hover,.btn_type05:hover,.btn_type06:hover,.btn_type07:hover{
+ 	display:inline-block;
+	vertical-align:middle;
+ 	background-image:url(../../../img/sprite/dist/button_hover.png);
+ 	background-repeat: no-repeat;
+}
+.btn_file01:hover{
+	background-position:-161px -31px;
+	width:90px;
+	height:28px;
+}
+.btn_type01:hover{
+	background-position:0px -94px;
+	width:90px;
+	height:30px;
+}
+.btn_type02:hover{
+	background-position:0px -125px;
+	width:90px;
+	height:30px;
+}
+.btn_type03:hover{
+	background-position:-161px 0px;
+	width:90px;
+	height:30px;
+}
+.btn_type04:hover{
+	background-position:0px -68px;
+	width:120px;
+	height:25px;
+}
+.btn_type05:hover{
+	background-position:-161px -60px;
+	width:50px;
+	height:25px;
+}
+.btn_type06:hover{
+	background-position:0px -39px;
+	width:120px;
+	height:28px;
+}
+.btn_type07:hover{
+	background-position:0px 0px;
+	width:160px;
+	height:38px;
+}

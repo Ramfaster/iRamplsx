@@ -1,0 +1,21 @@
+.btn_type01:active,.btn_type02:active,.btn_type03:active{
+ 	display:inline-block;
+	vertical-align:middle;
+ 	background-image:url(../../../img/sprite/dist/button_active.png) !important;
+ 	background-repeat: no-repeat;
+}
+.btn_type01:active{
+	background-position:0px 0px !important;
+	width:90px !important;
+	height:30px !important;
+}
+.btn_type02:active{
+	background-position:0px -31px !important;
+	width:90px !important;
+	height:30px !important;
+}
+.btn_type03:active{
+	background-position:-91px 0px !important;
+	width:90px !important;
+	height:30px !important;
+}

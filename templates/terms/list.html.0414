@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+
+<div id="container">
+<div class="full_cont">
+    <div class="search_area">
+    	<div class="serarch_bgcell">
+			<span class="c_tit01">Dictionary Of Terms</span>
+       <div class="serarch_bgcell full">                   
+           <div class="srch_set">
+               <select id="searchKey">
+                   <option value="all">전체</option>
+                   <option value="term">표준용어</option>
+                   <option value="word">표준단어</option>
+                </select>
+                <div class="search"><input type="text" id="searchValue" class="frm_type" value=""/><a href="javascript:;" id="btn_search" class="btn_srch"><i class="icon_search"></i></a></div>       
+            </div>
+        </div>
+    </div>
+	 <div class="grid_tbl_wrap">
+        <div class="grid_num_wrap">   
+        	<span class="grid_tit" id="totalRowCount"></span>   
+        	<span class="f_right"><a href="/hom/excel/mastrstdrinfomgt/alarmstdr/download.do" class="btn_excel btn_popup"><i class="icon_excel"></i><span></span></a></span>          
+        </div>
+        <table id="gridList"></table>
+    </div>
+    <div class="btn_wrap" id="btn_group_edit">                       
+      <div class="btn_sec_wrap" id="btn_alarm_regist"><a href="/hom/masterdata/alarm/form.do?method=" class="btn_type01">등록</a> </div>
+    </div> 
+</div>
+</div>
+{% endblock %}
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/src/mastrstdrinfomgt/elcPwStnAlarmStdrMgt.js') }}"></script>

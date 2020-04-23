@@ -1,0 +1,16 @@
+.icon_dep3:hover,.icon_more02:hover{
+ 	display:inline-block;
+	vertical-align:middle;
+ 	background-image:url(../../../img/sprite/dist/icon_hover.png);
+ 	background-repeat: no-repeat;
+}
+.icon_dep3:hover{
+	background-position:-16px 0px;
+	width:7px;
+	height:7px;
+}
+.icon_more02:hover{
+	background-position:0px 0px;
+	width:15px;
+	height:15px;
+}

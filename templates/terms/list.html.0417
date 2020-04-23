@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+
+<div class="lnb">
+	<span> 기준정보서비스</span>
+	<i class="icon_gt"></i>
+	<strong>Dictionary Of Terms</strong>
+</div>
+<div class="full_cont">
+    <div class="search_area">
+    	<div class="serarch_bgcell full">
+			<div class="srch_set">
+				<span class="custom_select custom-form-select03" style="color: rgb(60, 60, 60); width: 80px; padding: 0px 15px; height: 30px; line-height: 30px; font-size: 12px; overflow: hidden; position: absolute;">전체</span>
+				<select id="searchKey" style="width: 110px; height: 30px; line-height: 26px; position: relative; opacity: 0; z-index: 100;">
+					<option value="all">전체</option>
+					<option value="korNm">한글명</option>
+					<option value="engAbrv">영문약어</option>
+				</select>
+				<div class="search"><input type="text" id="searchValue" class="frm_type" value=""><a href="javascript:;" id="btn_search" class="btn_srch"><i class="icon_search">검색</i></a></div>
+			</div>
+		</div>
+	</div>
+	<div class="grid_tbl_wrap">
+		<div class="grid_num_wrap">   
+        	<span class="grid_tit" id="totalRowCount"></span>   
+        	<span class="f_right"><a href="/hom/excel/mastrstdrinfomgt/alarmstdr/download.do" class="btn_excel btn_popup"><i class="icon_excel"></i><span>내려받기</span></a></span>          
+      </div>
+      <table id="gridList"></table>
+      <div id="pager"></div>
+    </div>
+    <div class="btn_wrap" id="btn_group_edit">                       
+      <div class="btn_sec_wrap" id="btn_alarm_regist"><a href="/hom/masterdata/alarm/form.do?method=" class="btn_type01">등록</a> </div>
+    </div> 
+</div>
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/src/terms/termsExpress.js')}}"></script>
+
+
+{% endblock %}
