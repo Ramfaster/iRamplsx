@@ -1,6 +1,6 @@
 from flask import Blueprint, request, render_template, Flask, flash, redirect, url_for, session, Response, jsonify
 from datetime import datetime
-from collections import OrderedDict
+import OrderedDict
 import re, json
 from module import dbModule
 from flask_paginate import Pagination, get_page_parameter
@@ -59,7 +59,7 @@ def list():
         #wrdTy = index["WRD_TY"]
         #synonym = index["SYNONYM"]
         #descr = index["DESCR"]
-        d = collections.OrderedDict()
+        d = OrderedDict()
         d['KORNM']  = row[1] #korNm
         d['ENG_ABRV']  = row[2] #engAbrv
         d['ENG_MEAN']  = row[3] #engMean
