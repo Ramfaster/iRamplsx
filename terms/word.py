@@ -61,7 +61,7 @@ def list():
         engMean = index[2]
         wrdTy = index[3]
         synonym = index[4]
-        dic_data.append([korNm, engAbrv, engMean, wrdTy, synonym)
+        dic_data.append([korNm, engAbrv, engMean, wrdTy, synonym])
     context={
         "page":page,
         "pagination":pagination,
