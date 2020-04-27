@@ -52,7 +52,7 @@ def list():
     pagination = Pagination(page=page, total=totalRowCount, search=searchKey, record_name='words')
     
     dic_data = []
-    for index in words:
+    for row in words:
         #korNm = index["KORNM"]
         #engAbrv = index["ENG_ABRV"] 
         #engMean = index["ENG_MEAN"]
