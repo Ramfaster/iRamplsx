@@ -48,22 +48,26 @@ def list():
     total_rows = totalRowCount
     pagination = Pagination(page=page, total=totalRowCount, search=searchKey, record_name='words')
     
-    for index in range(0,words):
-        dic_data ={}
-        #dic_data["no"]=str(index)
-        dic_data["KORNM"] = dataset[index]
-        dic_data["ENG_ABRV"] = dataset[index]
-        dic_data["ENG_MEAN"] = dataset[index]
-        dic_data["WRD_TY"] = dataset[index]
-        dic_data["SYNONYM"] = dataset[index]
-        dic_data["DESCR"] = dataset[index]
-        row_array.append(dic_data)
+    dic_data = []
+    for index in words:
+        #index["KORNM"]
+        #index["ENG_ABRV"] 
+        #index["ENG_MEAN"]
+        #index["WRD_TY"]
+        #index["SYNONYM"]
+        #index["DESCR"]
+        korNm = index[0]
+        engAbrv = index[1]
+        engMean = index[2]
+        wrdTy = index[3]
+        synonym = index[4]
+        dic_data.append([korNm, engAbrv, engMean, wrdTy, synonym)
     context={
         "page":page,
         "pagination":pagination,
         "total":totalRowCount,
         "records":words,
-        "words":row_array
+        "words":dic_data
     }
     
     return Response(json.dumps(context), mimetype='application/json')
