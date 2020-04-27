@@ -30,15 +30,18 @@ def list():
     # Check if serach dataset / totalRowCount
     try:
         if searchKey == 'all' or searchKey == None:
+            print("#1-1 all #")
             sql = "SELECT WF.KORNM, WF.ENG_ABRV, WFD.ENG_MEAN, WF.WRD_TY, WFD.DESCR, WFD.SYNONYM FROM TB_WRD_FOAFT WF, TB_WRD_FOAFT_DETL WFD WHERE WF.WRD_ID = WFD.WRD_ID AND WF.KORNM"
             totalRowCount = db_class.executeRowCount(sql)
             words = db_class.executeAll(sql)            
         elif searchKey == 'korNm':
+            print("#1-2 korNm #")
             sql = "SELECT WF.KORNM, WF.ENG_ABRV, WFD.ENG_MEAN, WF.WRD_TY, WFD.DESCR, WFD.SYNONYM FROM TB_WRD_FOAFT WF, TB_WRD_FOAFT_DETL WFD WHERE WF.WRD_ID = WFD.WRD_ID AND WF.KORNM LIKE '%s'||'%'"%(searchValue)
             totalRowCount = db_class.executeRowCount(sql)
             words = db_class.executeAll(sql)
         elif searchKey == 'engAbrv':
-            sql = "SELECT WF.KORNM, WF.ENG_ABRV, WFD.ENG_MEAN, WF.WRD_TY, WFD.DESCR, WFD.SYNONYM cnt FROM TB_WRD_FOAFT WF, TB_WRD_FOAFT_DETL WFD WHERE WF.WRD_ID = WFD.WRD_ID AND WF.ENG_ABRV LIKE '%s'||'%'"%(searchValue)
+            print("#1-1 engAbrv #")
+            sql = "SELECT WF.KORNM, WF.ENG_ABRV, WFD.ENG_MEAN, WF.WRD_TY, WFD.DESCR, WFD.SYNONYM FROM TB_WRD_FOAFT WF, TB_WRD_FOAFT_DETL WFD WHERE WF.WRD_ID = WFD.WRD_ID AND WF.ENG_ABRV LIKE '%s'||'%'"%(searchValue)
             totalRowCount = db_class.executeRowCount(sql)
             words = db_class.executeAll(sql)
     except Exception as e:
@@ -56,11 +59,12 @@ def list():
         #index["WRD_TY"]
         #index["SYNONYM"]
         #index["DESCR"]
-        korNm = index[0]
-        engAbrv = index[1]
-        engMean = index[2]
-        wrdTy = index[3]
-        synonym = index[4]
+        korNm = index["KORNM"]
+        engAbrv = index["ENG_ABRV"] 
+        engMean = index["ENG_MEAN"]
+        wrdTy = index["WRD_TY"]
+        synonym = index["SYNONYM"]
+        descr = index["DESCR"]
         dic_data.append([korNm, engAbrv, engMean, wrdTy, synonym])
     context={
         "page":page,
