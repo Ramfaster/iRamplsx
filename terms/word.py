@@ -1,5 +1,6 @@
 from flask import Blueprint, request, render_template, Flask, flash, redirect, url_for, session, Response, jsonify
 from datetime import datetime
+import collections
 import re, json
 #from math import ceil
 from module import dbModule
