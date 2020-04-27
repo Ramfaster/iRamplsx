@@ -67,7 +67,7 @@ def list():
         d['SYNONYM']  = row[1] #synonym
         d['DESCR']  = row[1] #descr
         
-        dic_data.append([korNm, engAbrv, engMean, wrdTy, synonym])
+        dic_data.append(d)
     context={
         "page":page,
         "pagination":pagination,
