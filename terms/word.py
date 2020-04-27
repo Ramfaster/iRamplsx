@@ -72,7 +72,11 @@ def list():
         "words":dic_data
     }
     
-    return Response(json.dumps(context), mimetype='application/json')
+    #return Response(json.dumps(context), mimetype='application/json')
+    return render_template('terms/list.html',
+                           words=dic_data,
+                           pagination=pagination,
+                           )
     
 @terms_bp.route('/register', methods=['GET', 'POST'])
 def register():
