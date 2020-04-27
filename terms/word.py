@@ -54,12 +54,6 @@ def list():
     
     dic_data = []
     for row in words:
-        #korNm = index["KORNM"]
-        #engAbrv = index["ENG_ABRV"] 
-        #engMean = index["ENG_MEAN"]
-        #wrdTy = index["WRD_TY"]
-        #synonym = index["SYNONYM"]
-        #descr = index["DESCR"]
         d = OrderedDict()
         d['korNm']  = row["KORNM"]
         d['engAbrv']  = row["ENG_ABRV"] 
@@ -72,7 +66,7 @@ def list():
         
     context={
         "page":page,
-        "pagination":pagination,
+        #"pagination":pagination,
         "total":totalRowCount,
         "records":words,
         "words":dic_data
