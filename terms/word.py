@@ -53,18 +53,20 @@ def list():
     
     dic_data = []
     for index in words:
-        #index["KORNM"]
-        #index["ENG_ABRV"] 
-        #index["ENG_MEAN"]
-        #index["WRD_TY"]
-        #index["SYNONYM"]
-        #index["DESCR"]
-        korNm = index["KORNM"]
-        engAbrv = index["ENG_ABRV"] 
-        engMean = index["ENG_MEAN"]
-        wrdTy = index["WRD_TY"]
-        synonym = index["SYNONYM"]
-        descr = index["DESCR"]
+        #korNm = index["KORNM"]
+        #engAbrv = index["ENG_ABRV"] 
+        #engMean = index["ENG_MEAN"]
+        #wrdTy = index["WRD_TY"]
+        #synonym = index["SYNONYM"]
+        #descr = index["DESCR"]
+        d = collections.OrderedDict()
+        d['KORNM']  = row[1] #korNm
+        d['ENG_ABRV']  = row[1] #engAbrv
+        d['ENG_MEAN']  = row[1] #engMean
+        d['WRD_TY']  = row[1] #wrdTy
+        d['SYNONYM']  = row[1] #synonym
+        d['DESCR']  = row[1] #descr
+        
         dic_data.append([korNm, engAbrv, engMean, wrdTy, synonym])
     context={
         "page":page,
@@ -74,6 +76,7 @@ def list():
         "words":dic_data
     }
     
+    #return Response(json.dumps(context), mimetype='application/json')
     return Response(json.dumps(context), mimetype='application/json')
     
 @terms_bp.route('/register', methods=['GET', 'POST'])
