@@ -60,12 +60,12 @@ def list():
         #synonym = index["SYNONYM"]
         #descr = index["DESCR"]
         d = OrderedDict()
-        d['KORNM']  = row[1] #korNm
-        d['ENG_ABRV']  = row[2] #engAbrv
-        d['ENG_MEAN']  = row[3] #engMean
-        d['WRD_TY']  = row[4] #wrdTy
-        d['SYNONYM']  = row[5] #synonym
-        d['DESCR']  = row[6] #descr
+        d['korNm']  = row[1] #korNm
+        d['engAbrv']  = row[2] #engAbrv
+        d['engMean']  = row[3] #engMean
+        d['wrdTy']  = row[4] #wrdTy
+        d['synonym']  = row[5] #synonym
+        d['descr']  = row[6] #descr
         
         dic_data.append(d)
         
