@@ -60,7 +60,7 @@ def list():
         #wrdTy = index["WRD_TY"]
         #synonym = index["SYNONYM"]
         #descr = index["DESCR"]
-        d = collections.OrderedDict()
+        d = OrderedDict()
         d['KORNM']  = row[1] #korNm
         d['ENG_ABRV']  = row[2] #engAbrv
         d['ENG_MEAN']  = row[3] #engMean
@@ -69,6 +69,7 @@ def list():
         d['DESCR']  = row[6] #descr
         
         dic_data.append(d)
+        
     context={
         "page":page,
         "pagination":pagination,
@@ -77,7 +78,6 @@ def list():
         "words":dic_data
     }
     
-    #return Response(json.dumps(context), mimetype='application/json')
     return Response(json.dumps(context), mimetype='application/json')
     
 @terms_bp.route('/register', methods=['GET', 'POST'])
