@@ -62,11 +62,11 @@ def list():
         #descr = index["DESCR"]
         d = collections.OrderedDict()
         d['KORNM']  = row[1] #korNm
-        d['ENG_ABRV']  = row[1] #engAbrv
-        d['ENG_MEAN']  = row[1] #engMean
-        d['WRD_TY']  = row[1] #wrdTy
-        d['SYNONYM']  = row[1] #synonym
-        d['DESCR']  = row[1] #descr
+        d['ENG_ABRV']  = row[2] #engAbrv
+        d['ENG_MEAN']  = row[3] #engMean
+        d['WRD_TY']  = row[4] #wrdTy
+        d['SYNONYM']  = row[5] #synonym
+        d['DESCR']  = row[6] #descr
         
         dic_data.append(d)
     context={
