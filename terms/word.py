@@ -1,6 +1,6 @@
-from flask import Blueprint, request, render_template, Flask, flash, redirect, url_for, session, Response, jsonify, collections
+from flask import Blueprint, request, render_template, Flask, flash, redirect, url_for, session, Response, jsonify
 from datetime import datetime
-import OrderedDict
+from collections import OrderedDict
 import re, json
 from module import dbModule
 from flask_paginate import Pagination, get_page_parameter
