@@ -153,7 +153,6 @@ function jqGridBasic ()
         $ ( '#gridList' ).parent ().append ( html );
     }
 	
-	$ ( 'div.ui-jqgrid-bdiv' ).perfectScrollbar ();
 }
 
 
