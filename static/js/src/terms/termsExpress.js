@@ -103,35 +103,35 @@ function jqGridBasic ()
                     var resultText = "조회" + " " + "결과" + " " + homUtil.addNumberComma ( data.records ) +  "횟수";
 					alert(resultText);
                     $ ( "#totalRowCount" ).html ( resultText );
-					
-                    if ( data.records === 0 )
-                    {
-                        $gqNodata.show ();
-                    } else
-                    {
-                        $gqNodata.hide ();
-
-                        $ ( this ).find ( 'tbody tr.jqgrow:odd' ).addClass ( 'jqgrow_odd' );
-
-                        var ids = $gridList.jqGrid ( "getDataIDs" );
-						alert(ids.length);
-                        for ( var i = 0, length = ids.length; i <= length; i++ )
-                        {
-                            var cl = ids[i];
-                            var rowData = $gridList.getRowData ( cl );
-
-                            // 사용/미사용 alias
-                            if ( rowData.usgAt !== null && rowData.usgAt === 'Y' )
-                            {
-                                rowData.usgAt = "사용";
-                            } else if ( rowData.usgAt !== null && rowData.usgAt === 'N' )
-                            {
-                                rowData.usgAt = "미사용";
-                            }
-
-                            $gridList.jqGrid ( 'setRowData', cl, rowData );
-                        }
-                    }
+					alert((ids.length);
+                   //if ( data.records === 0 )
+                   //{
+                   //    $gqNodata.show ();
+                   //} else
+                   //{
+                   //    $gqNodata.hide ();
+				   //
+                   //    $ ( this ).find ( 'tbody tr.jqgrow:odd' ).addClass ( 'jqgrow_odd' );
+				   //
+                   //    var ids = $gridList.jqGrid ( "getDataIDs" );
+					//	alert(ids.length);
+                   //    for ( var i = 0, length = ids.length; i <= length; i++ )
+                   //    {
+                   //        var cl = ids[i];
+                   //        var rowData = $gridList.getRowData ( cl );
+				   //
+                   //        // 사용/미사용 alias
+                   //        if ( rowData.usgAt !== null && rowData.usgAt === 'Y' )
+                   //        {
+                   //            rowData.usgAt = "사용";
+                   //        } else if ( rowData.usgAt !== null && rowData.usgAt === 'N' )
+                   //        {
+                   //            rowData.usgAt = "미사용";
+                   //        }
+				   //
+                   //        $gridList.jqGrid ( 'setRowData', cl, rowData );
+                   //    }
+                   //}
                 },
                 loadError : function ( xhr, st, err )
                 {
