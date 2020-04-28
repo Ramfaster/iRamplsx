@@ -74,7 +74,7 @@ def list():
         #"pagination":pagination,
         "total":totalRowCount,
         "records":words,
-        "words":dic_data
+        "rows":dic_data
     }
     
     #return Response(json.dumps(context), mimetype='application/json')

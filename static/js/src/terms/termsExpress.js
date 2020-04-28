@@ -158,8 +158,6 @@ function jqGridBasic ()
 	
 }
 
-
-
 //jqGrid 검색
 function searchJqgrid ()
 {
