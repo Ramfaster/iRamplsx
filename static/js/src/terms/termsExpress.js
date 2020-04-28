@@ -99,10 +99,10 @@ function jqGridBasic ()
                     var $gqNodata = $ ( '.gq_nodata' );
 
                     // 조회결과 타이틀
-                    var resultText = "조회" + " " + "결과" + " " +"xxx"+  "횟수";
-
+                    var resultText = "조회" + " " + "결과" + " " + homUtil.addNumberComma ( data.records ) +  "횟수";
+					alert(resultText);
                     $ ( "#totalRowCount" ).html ( resultText );
-
+					
                     if ( data.records === 0 )
                     {
                         $gqNodata.show ();
@@ -113,7 +113,7 @@ function jqGridBasic ()
                         $ ( this ).find ( 'tbody tr.jqgrow:odd' ).addClass ( 'jqgrow_odd' );
 
                         var ids = $gridList.jqGrid ( "getDataIDs" );
-						alert("ids.length : " , ids.length);
+						alert(ids.length);
                         for ( var i = 0, length = ids.length; i <= length; i++ )
                         {
                             var cl = ids[i];
