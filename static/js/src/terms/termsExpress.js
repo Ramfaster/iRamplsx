@@ -84,10 +84,10 @@ function jqGridBasic ()
 	}];
 
     setSearchCondition ();
-//alert("reload#3");
+alert("reload#4");
     $ ( '#gridList' ).jqGrid (
             {
-                url : "list",
+                url : "{{url_for('terms_bp.list')}}",
                 mtype : "POST",
                 datatype : "json",
                 postData : {
