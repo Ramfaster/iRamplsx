@@ -73,7 +73,7 @@ def list():
     }
     
     #return Response(json.dumps(context), mimetype='application/json')
-    return render_template('terms/list.html',
+    return render_template('terms_bp/list.html',
                            words=dic_data,
                            pagination=pagination,
                            )
