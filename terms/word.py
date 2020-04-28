@@ -8,7 +8,7 @@ from flask_paginate import Pagination, get_page_parameter
 if __name__ == "__main__":
     app.debug = True
 
-terms_bp = Blueprint('terms_bp', __name__, url_prefix='/terms')
+terms_bp = Blueprint('terms_bp', __name__, url_prefix='/')
 
 db_class = dbModule.Database()
 
