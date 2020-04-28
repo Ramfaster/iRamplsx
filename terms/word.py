@@ -34,9 +34,10 @@ def list():
     print("#1-1 searchKey: ", searchKey, ", searchValue: ", searchValue)
     # Check if serach dataset / totalRowCount
     try:
+        nums = 0
         if searchKey == 'all' or searchKey == None:
             print("#1-1 all #")
-            sql = "SELECT WF.KORNM, WF.ENG_ABRV, WFD.ENG_MEAN, WF.WRD_TY, WFD.DESCR, WFD.SYNONYM FROM TB_WRD_FOAFT WF, TB_WRD_FOAFT_DETL WFD WHERE WF.WRD_ID = WFD.WRD_ID AND WF.KORNM"
+            sql = "SELECT @num:=@num+1 as ROWNUM, WF.KORNM, WF.ENG_ABRV, WFD.ENG_MEAN, WF.WRD_TY, WFD.DESCR, WFD.SYNONYM FROM (select @num:=0) a, TB_WRD_FOAFT WF, TB_WRD_FOAFT_DETL WFD WHERE WF.WRD_ID = WFD.WRD_ID"
             totalRowCount = db_class.executeRowCount(sql)
             words = db_class.executeAll(sql)            
         elif searchKey == 'korNm':
@@ -60,6 +61,7 @@ def list():
     dic_data = []
     for row in words:
         d = OrderedDict()
+        d['nums']  = row["ROWNUM"]
         d['korNm']  = row["KORNM"]
         d['engAbrv']  = row["ENG_ABRV"] 
         d['engMean']  = row["ENG_MEAN"]
