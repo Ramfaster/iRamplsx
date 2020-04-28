@@ -95,17 +95,17 @@ function jqGridBasic ()
                 viewrecords : true,
                 loadComplete : function ( data )
                 {
-					alert(data.records);
+					alert(data.totalRowCount);
                     var $gridList = $ ( '#gridList' );
                     var $checkboxs = $ ( '.ui-jqgrid-btable .cbox' );
                     var $gqNodata = $ ( '.gq_nodata' );
 
                     // 조회결과 타이틀
-                    var resultText = "조회" + " " + "결과" + " " + homUtil.addNumberComma ( data.records ) +  "횟수";
-					alert(resultText);
+                    var resultText = "조회" + " " + "결과" + " " + homUtil.addNumberComma ( data.totalRowCount ) +  "횟수";
+					
                     $ ( "#totalRowCount" ).html ( resultText );
 					
-                    if ( data.records === 0 )
+                    if ( data.totalRowCount === 0 )
                     {
                         $gqNodata.show ();
                     } else
