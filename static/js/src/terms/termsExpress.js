@@ -69,7 +69,7 @@ alert("reload#2");
     $ ( '#gridList' ).jqGrid (
             {
                 //url : "{{ url_for('terms_bp.list') }}",
-				url : "terms/list",
+				url : "list",
                 mtype : "POST",
                 datatype : "json",
                 postData : {
