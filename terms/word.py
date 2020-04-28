@@ -12,7 +12,7 @@ terms_bp = Blueprint('terms_bp', __name__, url_prefix='/terms')
 
 db_class = dbModule.Database()
 
-@terms_bp.route('/list', methods=['GET','POST'])
+@terms_bp.route('/terms/list', methods=['GET','POST'])
 def list():
     print("#### terms list init ####")
     str_url = request.referrer
@@ -73,9 +73,9 @@ def list():
     }
     
     #return Response(json.dumps(context), mimetype='application/json')
-    return render_template('terms_bp/list.html',
+    return render_template('terms/list.html',
                            words=dic_data,
-                           pagination=pagination,
+                           pagination=pagination
                            )
     
 @terms_bp.route('/register', methods=['GET', 'POST'])
