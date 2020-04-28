@@ -94,6 +94,7 @@ function jqGridBasic ()
                 viewrecords : true,
                 loadComplete : function ( data )
                 {
+					alert(data.records);
                     var $gridList = $ ( '#gridList' );
                     var $checkboxs = $ ( '.ui-jqgrid-btable .cbox' );
                     var $gqNodata = $ ( '.gq_nodata' );
