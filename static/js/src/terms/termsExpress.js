@@ -65,7 +65,7 @@ function jqGridBasic ()
 	}];
 
     setSearchCondition ();
-alert("reload#1");
+alert("reload#2");
     $ ( '#gridList' ).jqGrid (
             {
                 //url : "{{ url_for('terms_bp.list') }}",
