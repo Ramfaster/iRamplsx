@@ -12,9 +12,14 @@ terms_bp = Blueprint('terms_bp', __name__, url_prefix='/terms')
 
 db_class = dbModule.Database()
 
+@terms_bp.route('/list_page', methods=['GET','POST'])
+def list_page():
+    print("#### terms list_page init ####")
+    return render_template('terms/list.html')
+
 @terms_bp.route('/list', methods=['GET','POST'])
 def list():
-    print("#### terms list init ####")
+    print("#### terms list Ajax ####")
     str_url = request.referrer
     print("str_url : ", str_url)
     page = request.args.get(get_page_parameter(), type=int, default=1)

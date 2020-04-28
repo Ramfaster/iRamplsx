@@ -35,9 +35,10 @@ def login():
             session['username'] = row['NAME']
             # Redirect to home page
             print("#3-1 Redirect to terms_list page ")
-            #return redirect(url_for('terms_bp.list'))
-            #return redirect_('terms/list.html' username=session['username'])
-            return render_template('terms/list.html')
+            
+            return redirect(url_for('terms_bp.list_page'))
+            #return redirect('terms/list.html' username=session['username'])
+            #return render_template('terms/list.html')
             #return 'Logged in successfully!'
         else:
             # account_id doesnt exist or username/password incorrect
