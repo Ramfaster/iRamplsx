@@ -34,12 +34,15 @@ function jqGridBasic ()
     var colNames = null;
     var colModel = null;
 
-    colNames = ['NO','한글명', '영문약어', '영문의미','단어유형','동의어','설명'];
-	colModel = [ {
-		name : 'no',
-		width : 100,
-		align : 'center'
-	}, {
+    colNames = ['한글명', '영문약어', '영문의미','단어유형','동의어','설명'];
+	//colNames = ['NO','한글명', '영문약어', '영문의미','단어유형','동의어','설명'];
+	colModel = [ 
+	//{
+	//	name : 'no',
+	//	width : 100,
+	//	align : 'center'
+	//}, 
+	{
 		name : 'korNm',
 		width : 200,
 		align : 'left'
@@ -53,8 +56,8 @@ function jqGridBasic ()
 		align : 'left'
 	}, {
 		name : 'wrdTy',
-		align : 'left',
-		width : 200
+		align : 'center',
+		width : 100
 	}, {
 		name : 'synonym',
 	        width : 200,
@@ -62,7 +65,7 @@ function jqGridBasic ()
 	}, {
 		name : 'descr',
 		align : 'left',
-		width : 300 
+		width : 500 
 	}];
 
     setSearchCondition ();
