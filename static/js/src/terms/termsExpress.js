@@ -65,7 +65,7 @@ function jqGridBasic ()
 	}];
 
     setSearchCondition ();
-alert("reload#2");
+
     $ ( '#gridList' ).jqGrid (
             {
                 //url : "{{ url_for('terms_bp.list') }}",
@@ -113,6 +113,7 @@ alert("reload#2");
                         $ ( this ).find ( 'tbody tr.jqgrow:odd' ).addClass ( 'jqgrow_odd' );
 
                         var ids = $gridList.jqGrid ( "getDataIDs" );
+						alert("ids.length : " , ids.length);
                         for ( var i = 0, length = ids.length; i <= length; i++ )
                         {
                             var cl = ids[i];
@@ -125,15 +126,6 @@ alert("reload#2");
                             } else if ( rowData.usgAt !== null && rowData.usgAt === 'N' )
                             {
                                 rowData.usgAt = "미사용";
-                            }
-
-                            // 화면 표출 여부 사용/미사용 alias
-                            if ( rowData.scrinExprsAt !== null && rowData.scrinExprsAt === 'Y' )
-                            {
-                                rowData.scrinExprsAt = "사용";
-                            } else if ( rowData.scrinExprsAt !== null && rowData.scrinExprsAt === 'N' )
-                            {
-                                rowData.scrinExprsAt = "미사용";
                             }
 
                             $gridList.jqGrid ( 'setRowData', cl, rowData );
@@ -160,6 +152,8 @@ alert("reload#2");
 
         $ ( '#gridList' ).parent ().append ( html );
     }
+	
+	$ ( 'div.ui-jqgrid-bdiv' ).perfectScrollbar ();
 }
 
 
