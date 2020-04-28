@@ -80,7 +80,7 @@ function jqGridBasic ()
                     searchKey : searchCondition.searchKey,
                     searchKeyword : searchCondition.searchKeyword
                 },
-                height : 565,
+                height : 555,
                 autowidth : true,
                 shrinkToFit : false,
                 colNames : colNames,

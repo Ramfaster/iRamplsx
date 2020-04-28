@@ -41,12 +41,12 @@ def list():
             words = db_class.executeAll(sql)            
         elif searchKey == 'korNm':
             print("#1-2 korNm #")
-            sql = "SELECT WF.KORNM, WF.ENG_ABRV, WFD.ENG_MEAN, WF.WRD_TY, WFD.DESCR, WFD.SYNONYM FROM TB_WRD_FOAFT WF, TB_WRD_FOAFT_DETL WFD WHERE WF.WRD_ID = WFD.WRD_ID AND WF.KORNM LIKE '%s'||'%'"%(searchValue)
+            sql = "SELECT @num:=@num+1 as ROWNUM, WF.KORNM, WF.ENG_ABRV, WFD.ENG_MEAN, (SELECT KOR_NM FROM TB_CL_CD_DETL WHERE CL_CD = 'CDK-COM-002' AND CD_ID = WF.WRD_TY) WRD_TY, WFD.DESCR, WFD.SYNONYM FROM (select @num:=0) a, TB_WRD_FOAFT WF, TB_WRD_FOAFT_DETL WFD  WHERE WF.WRD_ID = WFD.WRD_ID AND WF.KORNM LIKE '%s'||'%'"%(searchValue)
             totalRowCount = db_class.executeRowCount(sql)
             words = db_class.executeAll(sql)
         elif searchKey == 'engAbrv':
             print("#1-1 engAbrv #")
-            sql = "SELECT WF.KORNM, WF.ENG_ABRV, WFD.ENG_MEAN, WF.WRD_TY, WFD.DESCR, WFD.SYNONYM FROM TB_WRD_FOAFT WF, TB_WRD_FOAFT_DETL WFD WHERE WF.WRD_ID = WFD.WRD_ID AND WF.ENG_ABRV LIKE '%s'||'%'"%(searchValue)
+            sql = "SELECT @num:=@num+1 as ROWNUM, WF.KORNM, WF.ENG_ABRV, WFD.ENG_MEAN, (SELECT KOR_NM FROM TB_CL_CD_DETL WHERE CL_CD = 'CDK-COM-002' AND CD_ID = WF.WRD_TY) WRD_TY, WFD.DESCR, WFD.SYNONYM FROM (select @num:=0) a, TB_WRD_FOAFT WF, TB_WRD_FOAFT_DETL WFD  WHERE WF.WRD_ID = WFD.WRD_ID AND WF.ENG_ABRV LIKE '%s'||'%'"%(searchValue)
             totalRowCount = db_class.executeRowCount(sql)
             words = db_class.executeAll(sql)
     except Exception as e:
