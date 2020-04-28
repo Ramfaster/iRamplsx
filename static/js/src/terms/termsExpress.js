@@ -37,7 +37,8 @@ function jqGridBasic ()
     colNames = ['NO','한글명', '영문약어', '영문의미','단어유형','동의어','설명'];
 	colModel = [ {
 		name : 'no',
-		width : 100
+		width : 100,
+		align : 'center'
 	}, {
 		name : 'korNm',
 		width : 200,
@@ -45,13 +46,13 @@ function jqGridBasic ()
 	}, {
 		name : 'engAbrv',
 		width : 200,
-                align : 'left'
+        align : 'left'
 	}, {
-		name : 'means',
+		name : 'engMean',
 		width : 400,
 		align : 'left'
 	}, {
-		name : 'type',
+		name : 'wrdTy',
 		align : 'left',
 		width : 200
 	}, {
@@ -59,7 +60,7 @@ function jqGridBasic ()
 	        width : 200,
                 align : 'left'	
 	}, {
-		name : 'desc',
+		name : 'descr',
 		align : 'left',
 		width : 300 
 	}];
