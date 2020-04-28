@@ -144,31 +144,9 @@ alert("reload#1");
                     console.log ( ">>>>> loadError " );
                     console.log ( xhr, st, err );
                 },
-                // row 선택시
-                onSelectRow : function ( rowId, status )
-                {
-                    if ( ! isEditing ) // 편집중이 아니면
-                    {
-                        var $gridList = $ ( '#gridList' );
-                        var rowData = $gridList.getRowData ( rowId );
-
-                        var tagId = encodeURIComponent ( rowData.tagId )
-                        var encodedSearchKeyword = encodeURIComponent ( searchCondition.searchKeyword );
-
-                        setSearchCondition ();
-                        
-                        location.href ='/hom/sysmgt/ess/view.do?tagId=' + tagId + '&selPvId='
-                                + searchCondition.pvId + '&selEqmtGrp=' + searchCondition.eqmtGrpCd + '&selEqmt=' + searchCondition.eqmtId 
-                                + '&searchKey=' + searchCondition.searchKey + '&searchValue=' + encodeURIComponent ( encodedSearchKeyword );
-                    }
-                    
-                },
                 gridComplete : function ()
                 {
-                    if ( isEditing )
-                    {
-                        changeEditMode ();
-                    }
+                    console.log ( ">>>>> OK " );
                 }
             } );
 
