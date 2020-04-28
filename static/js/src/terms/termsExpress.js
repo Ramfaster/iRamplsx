@@ -3,26 +3,7 @@ var isEditing = false;
 // form element customize
 function customizeForm ()
 {
-    // 구분
-    var $dateType1 = $ ( '#sel_type0, #sel_type1,.customize_select' ).customizeSelect ( {
-        width : 150,
-        paddingHorizontal : 15,
-        height : 30,
-        color : '#3c3c3c',
-        initClass : 'custom-form-select05',
-        focusClass : 'custom-form-focused05',
-        disableClass : 'custom-form-disabled05'
-    } );
-
-    var $dateType2 = $ ( '.customize_select2' ).customizeSelect ( {
-        width : 80,
-        paddingHorizontal : 15,
-        height : 30,
-        color : '#3c3c3c',
-        initClass : 'custom-form-select03',
-        focusClass : 'custom-form-focused03',
-        disableClass : 'custom-form-disabled03'
-    } );
+ 
 
     // 검색 조건
     var $dateType = $ ( '#searchKey' ).customizeSelect ( {
@@ -84,7 +65,7 @@ function jqGridBasic ()
 	}];
 
     setSearchCondition ();
-alert("reload#4");
+alert("reload#1");
     $ ( '#gridList' ).jqGrid (
             {
                 url : "{{url_for('terms_bp.list')}}",
@@ -287,9 +268,6 @@ function setSearchCondition()
 
 $ ( function ()
 {
-    $ ( "#div_editMode" ).css ( "display", "none" );
-
-    
     setSearchCondition (); // 검색조건 저장
     
     customizeForm ();
