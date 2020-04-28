@@ -91,6 +91,7 @@ function jqGridBasic ()
                 rowNum : 30, 
                 // rowNum : staticVariable.gridRow30,
                 scroll : true,
+				pager : "#pager_list",
                 viewrecords : true,
                 loadComplete : function ( data )
                 {
