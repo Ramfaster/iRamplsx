@@ -8,11 +8,11 @@ from flask_paginate import Pagination, get_page_parameter
 if __name__ == "__main__":
     app.debug = True
 
-terms_bp = Blueprint('terms_bp', __name__, url_prefix='/')
+terms_bp = Blueprint('terms_bp', __name__, url_prefix='/terms')
 
 db_class = dbModule.Database()
 
-@terms_bp.route('/terms/list', methods=['GET','POST'])
+@terms_bp.route('/list', methods=['GET','POST'])
 def list():
     print("#### terms list init ####")
     str_url = request.referrer
