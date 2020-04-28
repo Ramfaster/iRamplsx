@@ -38,6 +38,7 @@ def list():
         elif searchKey == 'korNm':
             print("#1-2 korNm #")
             sql = "SELECT @num:=@num+1 as ROWNUM, WF.KORNM, WF.ENG_ABRV, WFD.ENG_MEAN, (SELECT KOR_NM FROM TB_CL_CD_DETL WHERE CL_CD = 'CDK-COM-002' AND CD_ID = WF.WRD_TY) WRD_TY, WFD.DESCR, WFD.SYNONYM FROM (select @num:=0) a, TB_WRD_FOAFT WF, TB_WRD_FOAFT_DETL WFD  WHERE WF.WRD_ID = WFD.WRD_ID AND WF.KORNM LIKE '%s'''%''"%(searchKeyword)
+            print("sql : " , sql )
             totalRowCount = db_class.executeRowCount(sql)
             words = db_class.executeAll(sql)
         elif searchKey == 'engAbrv':
