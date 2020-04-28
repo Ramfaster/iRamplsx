@@ -95,13 +95,14 @@ function jqGridBasic ()
                 viewrecords : true,
                 loadComplete : function ( data )
                 {
-					alert(data.total);
+					console.log ( ">>>>> loadComplete " );
+					console.log ("--- 1. data.total : " , data.total);
                     var $gridList = $ ( '#gridList' );
                     var $checkboxs = $ ( '.ui-jqgrid-btable .cbox' );
                     var $gqNodata = $ ( '.gq_nodata' );
 
                     // 조회결과 타이틀
-                    var resultText = "조회" + " " + "결과" + " " + homUtil.addNumberComma ( data.total ) +  "횟수";
+                    var resultText = "조회" + " " + "결과" + " " + homUtil.addNumberComma ( data.total ) +  " 건";
 					
                     $ ( "#totalRowCount" ).html ( resultText );
 					
@@ -115,7 +116,7 @@ function jqGridBasic ()
                         $ ( this ).find ( 'tbody tr.jqgrow:odd' ).addClass ( 'jqgrow_odd' );
 
                         var ids = $gridList.jqGrid ( "getDataIDs" );
-						alert(ids.length);
+						console.log ("--- 2. ids.length : " , ids.length);
                         for ( var i = 0, length = ids.length; i <= length; i++ )
                         {
                             var cl = ids[i];
@@ -141,7 +142,7 @@ function jqGridBasic ()
                 },
                 gridComplete : function ()
                 {
-                    console.log ( ">>>>> OK " );
+                    console.log ( ">>>>> Complete " );
                 }
             } );
 
