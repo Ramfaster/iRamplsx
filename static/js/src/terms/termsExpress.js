@@ -161,7 +161,7 @@ function jqGridBasic ()
                         //        + searchCondition.pvId + '&selEqmtGrp=' + searchCondition.eqmtGrpCd + '&selEqmt=' + searchCondition.eqmtId 
                         //        + '&searchKey=' + searchCondition.searchKey + '&searchValue=' + encodeURIComponent ( encodedSearchKeyword );
 						//location.href = "{{ url_for( 'view' , wrdId=rowData.wrdId, searchKey=searchCondition.searchKey , searchValue=searchCondition.searchKeyword ) }}"
-						location.href = "list?wrdId="+rowData.wrdId+"&searchKey="+searchCondition.searchKey+"&searchValue="+searchCondition.searchKeyword;
+						location.href = "view?wrdId="+rowData.wrdId+"&searchKey="+searchCondition.searchKey+"&searchValue="+searchCondition.searchKeyword;
                     }
                     
                 },
