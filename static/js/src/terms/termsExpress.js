@@ -145,12 +145,12 @@ function jqGridBasic ()
                     console.log ( xhr, st, err );
                 },
 				// row 선택시
-                onSelectRow : function ( rowId, status )
+                onSelectRow : function ( rowid, status )
                 {
                     if ( ! isEditing ) // 편집중이 아니면
                     {
                         var $gridList = $ ( '#gridList' );
-                        var rowData = $gridList.getRowData ( rowId );
+                        var rowData = $gridList.getRowData ( rowid );
 
                         var wrdId = rowData.wrdId
                         var encodedSearchKeyword = encodeURIComponent ( searchCondition.searchKeyword );
