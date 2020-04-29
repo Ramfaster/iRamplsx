@@ -98,22 +98,22 @@ def view():
     
     if wrdId != None:
         sql = "SELECT WF.WRD_ID, WF.KORNM, WF.ENG_ABRV, WF.USG_AT, WFD.ENG_MEAN, WFD.DOMN_ID, WF.WRD_TY, WFD.DESCR, WFD.SYNONYM FROM TB_WRD_FOAFT WF, TB_WRD_FOAFT_DETL WFD WHERE WF.WRD_ID = WFD.WRD_ID AND WF.WRD_ID = '%s' "%(wrdId)
-        words = db_class.executeAll(sql) 
+        words = db_class.executeOne(sql) 
         
-    dic_data = []
-    for row in words:
-        d = OrderedDict()
-        d['no']  = row["ROWNUM"]
-        d['wrdId']  = row["WRD_ID"]
-        d['korNm']  = row["KORNM"]
-        d['engAbrv']  = row["ENG_ABRV"] 
-        d['usgAt']  = row["USG_AT"] 
-        d['engMean']  = row["ENG_MEAN"]
-        d['wrdTy']  = row["WRD_TY"]
-        d['synonym']  = row["SYNONYM"]
-        d['descr']  = row["DESCR"]
-        
-        dic_data.append(d)  
+#    dic_data = []
+#    for row in words:
+#        d = OrderedDict()
+#        d['no']  = row["ROWNUM"]
+#        d['wrdId']  = row["WRD_ID"]
+#        d['korNm']  = row["KORNM"]
+#        d['engAbrv']  = row["ENG_ABRV"] 
+#        d['usgAt']  = row["USG_AT"] 
+#        d['engMean']  = row["ENG_MEAN"]
+#        d['wrdTy']  = row["WRD_TY"]
+#        d['synonym']  = row["SYNONYM"]
+#        d['descr']  = row["DESCR"]
+#        
+#        dic_data.append(d)  
         
     return render_template('terms/register.html', wordsObj=words)    
 
