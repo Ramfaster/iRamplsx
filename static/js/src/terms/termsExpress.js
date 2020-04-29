@@ -34,7 +34,7 @@ function jqGridBasic ()
     var colNames = null;
     var colModel = null;
 
-    colNames = ['한글명', '영문약어', '영문의미','단어유형','동의어','설명'];
+    colNames = ['WORD_ID','한글명', '영문약어', '영문의미','단어유형','동의어','설명'];
 	//colNames = ['wrdId','한글명', '영문약어', '영문의미','단어유형','동의어','설명'];
 	colModel = [ 
 	{

@@ -94,5 +94,8 @@ def view():
     searchKey = request.form.get('searchKey')
     searchKeyword = request.form.get('searchKeyword')   
     print("#1-1 wrdId: ", wrdId, "searchKey: ", searchKey, ", searchKeyword: ", searchKeyword)
+    
+    if wrdId == None:
+        sql = "SELECT WF.WRD_ID, WF.KORNM, WF.ENG_ABRV, WFD.ENG_MEAN, WFD.DOMN_ID, WF.WRD_TY, WFD.DESCR, WFD.SYNONYM FROM TB_WRD_FOAFT WF, TB_WRD_FOAFT_DETL WFD WHERE WF.WRD_ID = WFD.WRD_ID AND WF.WRD_ID = '%s' "%(wrdId)
     return render_template('terms/register.html')    
 
