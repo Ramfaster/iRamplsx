@@ -100,7 +100,7 @@ function jqGridBasic ()
                 loadComplete : function ( data )
                 {
 					console.log ( ">>>>> loadComplete " );
-					console.log ("--- 1. data.total : " , data.total);
+					console.log (">> 1. data.total : " , data.total);
                     var $gridList = $ ( '#gridList' );
                     var $checkboxs = $ ( '.ui-jqgrid-btable .cbox' );
                     var $gqNodata = $ ( '.gq_nodata' );
@@ -120,7 +120,7 @@ function jqGridBasic ()
                         $ ( this ).find ( 'tbody tr.jqgrow:odd' ).addClass ( 'jqgrow_odd' );
 
                         var ids = $gridList.jqGrid ( "getDataIDs" );
-						console.log ("--- 2. ids.length : " , ids.length);
+						console.log (">> 2. ids.length : " , ids.length);
                         for ( var i = 0, length = ids.length; i <= length; i++ )
                         {
                             var cl = ids[i];
@@ -143,6 +143,26 @@ function jqGridBasic ()
                 {
                     console.log ( ">>>>> loadError " );
                     console.log ( xhr, st, err );
+                },
+				// row 선택시
+                onSelectRow : function ( rowId, status )
+                {
+                    if ( ! isEditing ) // 편집중이 아니면
+                    {
+                        var $gridList = $ ( '#gridList' );
+                        var rowData = $gridList.getRowData ( rowId );
+
+                        var wrdId = rowData.wrdId
+                        var encodedSearchKeyword = encodeURIComponent ( searchCondition.searchKeyword );
+
+                        setSearchCondition ();
+                        
+                        //location.href = contextPath + '/hom/sysmgt/ess/view.do?tagId=' + tagId + '&selPvId='
+                        //        + searchCondition.pvId + '&selEqmtGrp=' + searchCondition.eqmtGrpCd + '&selEqmt=' + searchCondition.eqmtId 
+                        //        + '&searchKey=' + searchCondition.searchKey + '&searchValue=' + encodeURIComponent ( encodedSearchKeyword );
+						location.href = "{{ url_for( 'terms_bp.view' , wrdId=rowData.wrdId, searchKey=searchCondition.searchKey , searchValue=searchCondition.searchKeyword ) }}"
+                    }
+                    
                 },
                 gridComplete : function ()
                 {

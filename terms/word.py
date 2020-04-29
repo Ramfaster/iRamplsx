@@ -32,17 +32,17 @@ def list():
     try:
         if searchKey == 'all' or searchKey == None:
             print("#1-1 all #")
-            sql = "SELECT @num:=@num+1 as ROWNUM, WF.KORNM, WF.ENG_ABRV, WFD.ENG_MEAN, (SELECT KOR_NM FROM TB_CL_CD_DETL WHERE CL_CD = 'CDK-COM-002' AND CD_ID = WF.WRD_TY) WRD_TY, WFD.DESCR, WFD.SYNONYM FROM (select @num:=0) a, TB_WRD_FOAFT WF, TB_WRD_FOAFT_DETL WFD WHERE WF.WRD_ID = WFD.WRD_ID"
+            sql = "SELECT @num:=@num+1 as ROWNUM, WF.WRD_ID, WF.KORNM, WF.ENG_ABRV, WFD.ENG_MEAN, (SELECT KOR_NM FROM TB_CL_CD_DETL WHERE CL_CD = 'CDK-COM-002' AND CD_ID = WF.WRD_TY) WRD_TY, WFD.DESCR, WFD.SYNONYM FROM (select @num:=0) a, TB_WRD_FOAFT WF, TB_WRD_FOAFT_DETL WFD WHERE WF.WRD_ID = WFD.WRD_ID"
             totalRowCount = db_class.executeRowCount(sql)
             words = db_class.executeAll(sql)            
         elif searchKey == 'korNm':
             print("#1-2 korNm #")
-            sql = "SELECT @num:=@num+1 as ROWNUM, WF.KORNM, WF.ENG_ABRV, WFD.ENG_MEAN, (SELECT KOR_NM FROM TB_CL_CD_DETL WHERE CL_CD = 'CDK-COM-002' AND CD_ID = WF.WRD_TY) WRD_TY, WFD.DESCR, WFD.SYNONYM FROM (select @num:=0) a, TB_WRD_FOAFT WF, TB_WRD_FOAFT_DETL WFD  WHERE WF.WRD_ID = WFD.WRD_ID AND WF.KORNM LIKE '%s'"%(searchKeyword)
+            sql = "SELECT @num:=@num+1 as ROWNUM, WF.WRD_ID, WF.KORNM, WF.ENG_ABRV, WFD.ENG_MEAN, (SELECT KOR_NM FROM TB_CL_CD_DETL WHERE CL_CD = 'CDK-COM-002' AND CD_ID = WF.WRD_TY) WRD_TY, WFD.DESCR, WFD.SYNONYM FROM (select @num:=0) a, TB_WRD_FOAFT WF, TB_WRD_FOAFT_DETL WFD  WHERE WF.WRD_ID = WFD.WRD_ID AND WF.KORNM LIKE '%s'"%(searchKeyword)
             totalRowCount = db_class.executeRowCount(sql)
             words = db_class.executeAll(sql)
         elif searchKey == 'engAbrv':
             print("#1-1 engAbrv #")
-            sql = "SELECT @num:=@num+1 as ROWNUM, WF.KORNM, WF.ENG_ABRV, WFD.ENG_MEAN, (SELECT KOR_NM FROM TB_CL_CD_DETL WHERE CL_CD = 'CDK-COM-002' AND CD_ID = WF.WRD_TY) WRD_TY, WFD.DESCR, WFD.SYNONYM FROM (select @num:=0) a, TB_WRD_FOAFT WF, TB_WRD_FOAFT_DETL WFD  WHERE WF.WRD_ID = WFD.WRD_ID AND WF.ENG_ABRV LIKE '%s'"%(searchKeyword)
+            sql = "SELECT @num:=@num+1 as ROWNUM, WF.WRD_ID, WF.KORNM, WF.ENG_ABRV, WFD.ENG_MEAN, (SELECT KOR_NM FROM TB_CL_CD_DETL WHERE CL_CD = 'CDK-COM-002' AND CD_ID = WF.WRD_TY) WRD_TY, WFD.DESCR, WFD.SYNONYM FROM (select @num:=0) a, TB_WRD_FOAFT WF, TB_WRD_FOAFT_DETL WFD  WHERE WF.WRD_ID = WFD.WRD_ID AND WF.ENG_ABRV LIKE '%s'"%(searchKeyword)
             totalRowCount = db_class.executeRowCount(sql)
             words = db_class.executeAll(sql)
     except Exception as e:
@@ -57,6 +57,7 @@ def list():
     for row in words:
         d = OrderedDict()
         d['no']  = row["ROWNUM"]
+        d['wrdId']  = row["WRD_ID"]
         d['korNm']  = row["KORNM"]
         d['engAbrv']  = row["ENG_ABRV"] 
         d['engMean']  = row["ENG_MEAN"]
@@ -85,4 +86,14 @@ def register():
     print("#### terms register init ####")
 
     return render_template('terms/register.html')
+    
+@terms_bp.route('/view', methods=['GET'])
+def view():
+    print("#### terms view init ####")
+    
+    wrdId = request.form.get('wrdId')
+    searchKey = request.form.get('searchKey')
+    searchKeyword = request.form.get('searchKeyword')   
+    print("#1-1 wrdId: ", wrdId, "searchKey: ", searchKey, ", searchKeyword: ", searchKeyword)
+    return render_template('terms/register.html')    
 
