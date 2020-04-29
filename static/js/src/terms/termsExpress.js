@@ -160,7 +160,7 @@ function jqGridBasic ()
 
                         //setSearchCondition ();
                         console.log (">> 4. rowData.wrdId : " , rowData.wrdId, ", searchKey : " , searchCondition.searchKey, ", searchValue :" , searchCondition.searchKeyword );
-						//location.href = "view?wrdId="+rowData.wrdId+"&searchKey="+searchCondition.searchKey+"&searchValue="+searchCondition.searchKeyword;
+						location.href = "view?wrdId="+rowData.wrdId+"&searchKey="+searchCondition.searchKey+"&searchValue="+searchCondition.searchKeyword;
                     }
                     
                 },
