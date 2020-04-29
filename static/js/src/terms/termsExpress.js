@@ -156,7 +156,7 @@ function jqGridBasic ()
                         var encodedSearchKeyword = encodeURIComponent ( searchCondition.searchKeyword );
 
                         //setSearchCondition ();
-                        console.log (">> 3. wrdId : " , rowData.wrdId, ", searchKey : " , searchCondition.searchKey, ", searchValue :" , searchCondition.searchKeyword );
+                        console.log (">> 3. rowData.wrdId : " , rowData.wrdId, ", searchKey : " , searchCondition.searchKey, ", searchValue :" , searchCondition.searchKeyword );
 						//location.href = "view?wrdId="+rowData.wrdId+"&searchKey="+searchCondition.searchKey+"&searchValue="+searchCondition.searchKeyword;
                     }
                     
