@@ -35,13 +35,12 @@ function jqGridBasic ()
     var colModel = null;
 
     colNames = ['한글명', '영문약어', '영문의미','단어유형','동의어','설명'];
-	//colNames = ['NO','한글명', '영문약어', '영문의미','단어유형','동의어','설명'];
+	//colNames = ['wrdId','한글명', '영문약어', '영문의미','단어유형','동의어','설명'];
 	colModel = [ 
-	//{
-	//	name : 'no',
-	//	width : 100,
-	//	align : 'center'
-	//}, 
+	{
+		name : 'wrdId',
+		hidden : true
+	}, 
 	{
 		name : 'korNm',
 		width : 200,
