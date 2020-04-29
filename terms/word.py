@@ -115,5 +115,5 @@ def view():
         
         dic_data.append(d)  
         
-    return render_template('terms/register.html', words=dic_data)    
+    return render_template('terms/register.html', wordsObj=words)    
 
