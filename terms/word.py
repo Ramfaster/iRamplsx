@@ -100,7 +100,7 @@ def view():
         sql = "SELECT WF.WRD_ID, WF.KORNM, WF.ENG_ABRV, WF.USG_AT, WFD.ENG_MEAN, WFD.DOMN_ID, WF.WRD_TY, WFD.DESCR, WFD.SYNONYM FROM TB_WRD_FOAFT WF, TB_WRD_FOAFT_DETL WFD WHERE WF.WRD_ID = WFD.WRD_ID AND WF.WRD_ID = '%s' "%(wrdId)
         words = db_class.executeAll(sql) 
         
-     dic_data = []
+    dic_data = []
     for row in words:
         d = OrderedDict()
         d['no']  = row["ROWNUM"]
