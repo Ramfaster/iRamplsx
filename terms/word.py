@@ -49,7 +49,6 @@ def list():
         print(e)
 
     print("#2-1 totalRowCount>>> : ", totalRowCount)
-    total_rows = totalRowCount
     pagination = Pagination(page=page, total=totalRowCount, search=searchKey, record_name='words')
     print("#2-2 pagination>>> : ", pagination)
     
@@ -64,12 +63,12 @@ def list():
         d['wrdTy']  = row["WRD_TY"]
         d['synonym']  = row["SYNONYM"]
         d['descr']  = row["DESCR"]
-        
+        print("#2-3 d['wrdId']>>> : ", d['wrdId'])
         dic_data.append(d)
         
     context={
         "page":page,
-        #"pagination":pagination,
+        "pagination":pagination,
         "total":totalRowCount,
         "records":words,
         "rows":dic_data
@@ -77,7 +76,7 @@ def list():
     
     return Response(json.dumps(context))
     #return render_template('terms/list.html'
-    #                       ,words=dic_data
+    #                       ,rows=dic_data
     #                       #,pagination=pagination
     #                       )
     
