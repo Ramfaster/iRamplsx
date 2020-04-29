@@ -34,7 +34,7 @@ function jqGridBasic ()
     var colNames = null;
     var colModel = null;
 
-    colNames = ['WORD_ID','한글명', '영문약어', '영문의미','단어유형','동의어','설명'];
+    colNames = ['WORD_ID','한글명', '영문약어', '영문의미','단어유형','동의어','사용여부','설명'];
 	//colNames = ['wrdId','한글명', '영문약어', '영문의미','단어유형','동의어','설명'];
 	colModel = [ 
 	{
@@ -61,6 +61,10 @@ function jqGridBasic ()
 		name : 'synonym',
 	        width : 200,
                 align : 'left'	
+	}, {
+		name : 'usgAt',
+		align : 'center',
+		width : 50
 	}, {
 		name : 'descr',
 		align : 'left',
