@@ -63,12 +63,12 @@ def list():
         d['wrdTy']  = row["WRD_TY"]
         d['synonym']  = row["SYNONYM"]
         d['descr']  = row["DESCR"]
-        print("#2-3 d['wrdId']>>> : ", d['wrdId'])
+        
         dic_data.append(d)
         
     context={
         "page":page,
-        "pagination":pagination,
+        #"pagination":pagination,
         "total":totalRowCount,
         "records":words,
         "rows":dic_data

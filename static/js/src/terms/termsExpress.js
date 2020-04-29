@@ -145,18 +145,18 @@ function jqGridBasic ()
                     console.log ( xhr, st, err );
                 },
 				// row 선택시
-                onSelectRow : function ( rowid, status )
+                onSelectRow : function ( rowId, status )
                 {
                     if ( ! isEditing ) // 편집중이 아니면
                     {
                         var $gridList = $ ( '#gridList' );
-                        var rowData = $gridList.getRowData ( rowid );
-
+                        var rowData = $gridList.getRowData ( rowId );
+						console.log (">> 3. rowData : " , rowData)
                         var wrdId = rowData.wrdId
                         var encodedSearchKeyword = encodeURIComponent ( searchCondition.searchKeyword );
 
                         //setSearchCondition ();
-                        console.log (">> 3. rowData.wrdId : " , rowData.wrdId, ", searchKey : " , searchCondition.searchKey, ", searchValue :" , searchCondition.searchKeyword );
+                        console.log (">> 4. rowData.wrdId : " , rowData.wrdId, ", searchKey : " , searchCondition.searchKey, ", searchValue :" , searchCondition.searchKeyword );
 						//location.href = "view?wrdId="+rowData.wrdId+"&searchKey="+searchCondition.searchKey+"&searchValue="+searchCondition.searchKeyword;
                     }
                     
