@@ -160,7 +160,7 @@ function jqGridBasic ()
                         //location.href = contextPath + '/hom/sysmgt/ess/view.do?tagId=' + tagId + '&selPvId='
                         //        + searchCondition.pvId + '&selEqmtGrp=' + searchCondition.eqmtGrpCd + '&selEqmt=' + searchCondition.eqmtId 
                         //        + '&searchKey=' + searchCondition.searchKey + '&searchValue=' + encodeURIComponent ( encodedSearchKeyword );
-						location.href = "{{ url_for( 'terms_bp.view' , wrdId=rowData.wrdId, searchKey=searchCondition.searchKey , searchValue=searchCondition.searchKeyword ) }}"
+						location.href = "{{ url_for( 'view' , wrdId=rowData.wrdId, searchKey=searchCondition.searchKey , searchValue=searchCondition.searchKeyword ) }}"
                     }
                     
                 },
